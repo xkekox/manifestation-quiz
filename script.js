@@ -1,13 +1,17 @@
 async function hashEmail(email) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(email.trim().toLowerCase());
-    const hash = await crypto.subtle.digest('SHA-256', data);
-    return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+    try {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(email.trim().toLowerCase());
+        const hash = await crypto.subtle.digest('SHA-256', data);
+        return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+    } catch (e) {
+        return '';
+    }
 }
 
 function nextStep(step) {
     document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
-    const nextEl = document.querySelector(`.quiz-step[data-step="${step}"]`);
+    const nextEl = document.querySelector(.quiz-step[data-step="\"]);
     if (nextEl) nextEl.classList.add('active');
 }
 
@@ -19,25 +23,27 @@ async function submitEmail() {
         return;
     }
 
+    // Hide optin and show loader instantly
+    document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
+    document.getElementById('loading-step').classList.add('active');
+
+    // Execute Hashing and Tracking in Background
     const emailHash = await hashEmail(email);
 
-    // PINTEREST LEAD EVENT (ENHANCED MATCH)
     if (window.pintrk) {
         pintrk('track', 'lead', { em: email });
     }
 
-    // Loader logic
-    document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
-    document.getElementById('loading-step').classList.add('active');
-
-    // AFFILIATE REDIRECTION WITH UTMs & HASH
+    // Build Premium Redirection URL
     const baseAffiliate = "https://a.moonmystical.com/optin1724860719225";
-    const utmParams = `?utm_source=pinterest&utm_medium=cpc&utm_campaign=manifestation_quiz&subid=${emailHash}`;
+    const utmParams = ?utm_source=pinterest&utm_medium=cpc&utm_campaign=quantum_v4&subid=\;
     const anchor = "#aff=jefersonkeko15e9cd";
-
+    
     const finalURL = baseAffiliate + utmParams + anchor;
 
+    // Redirection with 1.5s delay for value perception
     setTimeout(() => {
         window.location.href = finalURL;
-    }, 2000);
+    }, 1500);
 }
+
