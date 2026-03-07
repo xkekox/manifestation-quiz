@@ -44,7 +44,7 @@ async function submitEmail() {
     var emailInput = document.getElementById('user-email');
     var email = emailInput.value;
     if (!email || !email.includes('@')) {
-        alert('Por favor, insira um e-mail vÃ¡lido.');
+        alert('Por favor, insira um e-mail válido.');
         return;
     }
 
@@ -53,16 +53,16 @@ async function submitEmail() {
 
     var emailHash = await hashEmail(email);
 
-    // Rastreio do Pinterest
+    // Rastreio do Pinterest (Lead)
     if (window.pintrk) {
         pintrk('track', 'lead', { em: email });
     }
 
     // ============================================================
-    // CONFIGURAÃ‡ÃƒO DE VENDA (AGÃŠNCIA GEMINI)
-    // Substitua o link abaixo pelo seu link de checkout da Kiwify
+    // CONFIGURAÇÃO DE VENDA - AGÊNCIA GEMINI
+    // Link de Checkout Kiwify: https://pay.kiwify.com.br/1Mk1Aaa
     // ============================================================
-    var checkoutURL = 'SUO_LINK_DO_CHECKOUT_AQUI'; 
+    var checkoutURL = 'https://pay.kiwify.com.br/1Mk1Aaa'; 
 
     var finalURL = checkoutURL 
         + '?utm_source=pinterest'
@@ -71,7 +71,7 @@ async function submitEmail() {
         + '&email=' + encodeURIComponent(email)
         + '&external_id=' + emailHash;
 
-    // Redirecionamento apÃ³s 1.5s para criar percepÃ§Ã£o de anÃ¡lise
+    // Redirecionamento após 1.5s para criar percepção de análise cósmica
     setTimeout(function () {
         window.location.href = finalURL;
     }, 1500);
