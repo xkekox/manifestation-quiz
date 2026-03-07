@@ -71,6 +71,24 @@ h3 { font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; }
 }
 .trust-badge svg { color: var(--premium-gold); }
 
+/* Zodiac Grid */
+.zodiac-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+}
+.zodiac-btn {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px; padding: 15px 5px;
+    color: var(--secondary-text); font-size: 0.8rem; font-weight: 600;
+    cursor: pointer; transition: 0.2s;
+}
+.zodiac-btn:hover {
+    background: var(--accent-color); color: white; border-color: var(--accent-color);
+}
+@media (max-width: 480px) {
+    .zodiac-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
 .options { display: flex; flex-direction: column; gap: 12px; }
 
 .option-btn {
