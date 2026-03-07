@@ -44,7 +44,7 @@ async function submitEmail() {
     var emailInput = document.getElementById('user-email');
     var email = emailInput.value;
     if (!email || !email.includes('@')) {
-        alert('Please enter a valid email address.');
+        alert('Por favor, insira um e-mail vÃ¡lido.');
         return;
     }
 
@@ -53,17 +53,25 @@ async function submitEmail() {
 
     var emailHash = await hashEmail(email);
 
+    // Rastreio do Pinterest
     if (window.pintrk) {
         pintrk('track', 'lead', { em: email });
     }
 
-    var finalURL = 'https://a.moonmystical.com/optin1724860719225'
+    // ============================================================
+    // CONFIGURAÃ‡ÃƒO DE VENDA (AGÃŠNCIA GEMINI)
+    // Substitua o link abaixo pelo seu link de checkout da Kiwify
+    // ============================================================
+    var checkoutURL = 'SUO_LINK_DO_CHECKOUT_AQUI'; 
+
+    var finalURL = checkoutURL 
         + '?utm_source=pinterest'
         + '&utm_medium=cpc'
-        + '&utm_campaign=quantum_v4'
-        + '&subid=' + emailHash
-        + '&aff=jefersonkeko15e9cd';
+        + '&utm_campaign=codigo2026'
+        + '&email=' + encodeURIComponent(email)
+        + '&external_id=' + emailHash;
 
+    // Redirecionamento apÃ³s 1.5s para criar percepÃ§Ã£o de anÃ¡lise
     setTimeout(function () {
         window.location.href = finalURL;
     }, 1500);
