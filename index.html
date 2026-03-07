@@ -29,9 +29,9 @@
     <div class='container'>
         <div class='glass-box'>
             <header>
-                <div class='premium-badge'>PREMIUM ACCESS</div>
-                <h1>Unlock Your Quantum Potential</h1>
-                <p>Reveal the hidden cosmic frequencies blocking your abundance. Start your private 30-second analysis below.</p>
+                <div class='premium-badge'>COSMIC ANALYSIS 2026</div>
+                <h1>Your Zodiac Manifestation Blueprint</h1>
+                <p>Identify the hidden energetic blocks in your birth frequency. Start your private 30-second cosmic analysis below.</p>
             </header>
             <div id='quiz-container'>
                 <div class="progress-container">
@@ -46,8 +46,41 @@
                         <button class='option-btn' onclick='nextStep(2)'>Health & Inner Peace</button>
                     </div>
                 </div>
-                <!-- Question 2 -->
+                <!-- Zodiac Question -->
                 <div class='quiz-step' data-step='2'>
+                    <h3>Select your Zodiac Sign:</h3>
+                    <div class='options zodiac-grid'>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Aries</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Taurus</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Gemini</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Cancer</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Leo</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Virgo</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Libra</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Scorpio</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Sagittarius</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Capricorn</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Aquarius</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Pisces</button>
+                    </div>
+                </div>
+                <!-- Year Question (NEW) -->
+                <div class='quiz-step' data-step='3'>
+                    <h3>What is your birth year?</h3>
+                    <div class='options'>
+                        <select id='birth-year' class='option-btn' style='background: rgba(255,255,255,0.06); text-align: center;' onchange='nextStep(4)'>
+                            <option value='' disabled selected>Select Year...</option>
+                            <script>
+                                for(let y=2010; y>=1940; y--) {
+                                    document.write(`<option value="${y}">${y}</option>`);
+                                }
+                            </script>
+                        </select>
+                        <button class='option-btn premium-btn' onclick='if(document.getElementById("birth-year").value) nextStep(4)'>CONTINUE &rarr;</button>
+                    </div>
+                </div>
+                <!-- Question 4 (Renumbered) -->
+                <div class='quiz-step' data-step='4'>
                     <h3>How aligned do you feel with your divine purpose?</h3>
                     <div class='options'>
                         <button class='option-btn' onclick='nextStep("optin")'>Fully Aligned</button>
