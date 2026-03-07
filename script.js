@@ -17,13 +17,29 @@ function nextStep(step) {
         targetStep = "optin";
         document.getElementById('progress-bar').style.width = '98%';
     } else {
-        const progress = (step / 5) * 100; // Updated to 5 total steps for 100%
+        const progress = (step / 5) * 100;
         document.getElementById('progress-bar').style.width = `${progress}%`;
     }
 
     const nextEl = document.querySelector(`.quiz-step[data-step="${targetStep}"]`);
-    if (nextEl) nextEl.classList.add('active');
+    if (nextEl) {
+        nextEl.classList.add('active');
+        window.scrollTo(0, 0); // Garante que no celular o topo da pergunta apareça
+    }
 }
+
+// Popular os anos de forma segura ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
+    const yearSelect = document.getElementById('birth-year');
+    if (yearSelect) {
+        for (let y = 2010; y >= 1940; y--) {
+            const opt = document.createElement('option');
+            opt.value = y;
+            opt.innerHTML = y;
+            yearSelect.appendChild(opt);
+        }
+    }
+});
 
 async function submitEmail() {
     const emailInput = document.getElementById('user-email');
