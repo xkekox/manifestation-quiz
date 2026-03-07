@@ -11,13 +11,13 @@ async function hashEmail(email) {
 
 function nextStep(step) {
     document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
-
+    
     let targetStep = step;
     if (step === "optin") {
         targetStep = "optin";
-        document.getElementById('progress-bar').style.width = '90%';
+        document.getElementById('progress-bar').style.width = '98%';
     } else {
-        const progress = (step / 3) * 100;
+        const progress = (step / 5) * 100; // Updated to 5 total steps for 100%
         document.getElementById('progress-bar').style.width = `${progress}%`;
     }
 
