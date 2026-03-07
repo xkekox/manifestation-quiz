@@ -54,6 +54,23 @@ header p { color: var(--secondary-text); font-size: 1rem; margin-bottom: 35px; l
 
 h3 { font-size: 1.2rem; margin-bottom: 25px; font-weight: 600; }
 
+/* Progress Bar */
+.progress-container {
+    width: 100%; height: 6px; background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px; margin-bottom: 30px; overflow: hidden;
+}
+.progress-bar {
+    width: 33%; height: 100%; background: linear-gradient(90deg, var(--accent-color), #f093fb);
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Trust Badge */
+.trust-badge {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    font-size: 0.75rem; color: #888; margin: 5px 0 15px 0;
+}
+.trust-badge svg { color: var(--premium-gold); }
+
 .options { display: flex; flex-direction: column; gap: 12px; }
 
 .option-btn {
