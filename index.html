@@ -64,17 +64,12 @@
                         <button class='zodiac-btn' onclick='nextStep(3)'>Pisces</button>
                     </div>
                 </div>
-                <!-- Year Question (NEW) -->
+                <!-- Year Question -->
                 <div class='quiz-step' data-step='3'>
                     <h3>What is your birth year?</h3>
                     <div class='options'>
-                        <select id='birth-year' class='option-btn' style='background: rgba(255,255,255,0.06); text-align: center;' onchange='nextStep(4)'>
+                        <select id='birth-year' class='option-btn' style='background: rgba(255,255,255,0.06); text-align: center;'>
                             <option value='' disabled selected>Select Year...</option>
-                            <script>
-                                for(let y=2010; y>=1940; y--) {
-                                    document.write(`<option value="${y}">${y}</option>`);
-                                }
-                            </script>
                         </select>
                         <button class='option-btn premium-btn' onclick='if(document.getElementById("birth-year").value) nextStep(4)'>CONTINUE &rarr;</button>
                     </div>
