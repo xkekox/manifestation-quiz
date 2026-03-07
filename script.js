@@ -11,7 +11,7 @@ async function hashEmail(email) {
 
 function nextStep(step) {
     document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
-    
+
     let targetStep = step;
     if (step === "optin") {
         targetStep = "optin";
@@ -62,9 +62,9 @@ async function submitEmail() {
 
     // Build Premium Redirection URL
     const baseAffiliate = "https://a.moonmystical.com/optin1724860719225";
-    const utmParams = ?utm_source=pinterest&utm_medium=cpc&utm_campaign=quantum_v4&subid=\;
+    const utmParams = `?utm_source=pinterest&utm_medium=cpc&utm_campaign=quantum_v4&subid=${emailHash}`;
     const anchor = "#aff=jefersonkeko15e9cd";
-    
+
     const finalURL = baseAffiliate + utmParams + anchor;
 
     // Redirection with 1.5s delay for value perception
@@ -72,4 +72,3 @@ async function submitEmail() {
         window.location.href = finalURL;
     }, 1500);
 }
-
