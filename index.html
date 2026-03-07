@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='pt-br'>
 
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Quantum Manifestation Quiz | Premium Cosmic Analysis</title>
+    <title>Análise de Frequência Cósmica | Portal da Manifestação</title>
     <link rel='stylesheet' href='style.css'>
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
@@ -39,92 +39,89 @@
     <div class='container'>
         <div class='glass-box'>
             <header>
-                <div class='premium-badge'>COSMIC ANALYSIS 2026</div>
-                <h1>Your Zodiac Manifestation Blueprint</h1>
-                <p>Identify the hidden energetic blocks in your birth frequency. Start your private 30-second cosmic
-                    analysis below.</p>
+                <div class='premium-badge'>ANÁLISE CÓSMICA 2026</div>
+                <h1>Mapa da Sua Manifestação Zodiacal</h1>
+                <p>Identifique os bloqueios energéticos ocultos na sua frequência de nascimento. Comece sua análise cósmica privada de 30 segundos abaixo.</p>
             </header>
             <div id='quiz-container'>
                 <div class="progress-container">
                     <div class="progress-bar" id="progress-bar"></div>
                 </div>
-                <!-- Question 1 -->
+                <!-- Pergunta 1 -->
                 <div class='quiz-step active' data-step='1'>
-                    <h3>What area of your life is calling for a major shift?</h3>
+                    <h3>Qual área da sua vida precisa de uma mudança urgente?</h3>
                     <div class='options'>
-                        <button class='option-btn' onclick='nextStep(2)'>Financial Abundance</button>
-                        <button class='option-btn' onclick='nextStep(2)'>Soulmate Connection</button>
-                        <button class='option-btn' onclick='nextStep(2)'>Health & Inner Peace</button>
+                        <button class='option-btn' onclick='nextStep(2)'>Abundância Financeira</button>
+                        <button class='option-btn' onclick='nextStep(2)'>Conexão de Alma Gêmea</button>
+                        <button class='option-btn' onclick='nextStep(2)'>Saúde e Paz Interior</button>
                     </div>
                 </div>
-                <!-- Zodiac Question -->
+                <!-- Pergunta dos Signos -->
                 <div class='quiz-step' data-step='2'>
-                    <h3>Select your Zodiac Sign:</h3>
+                    <h3>Selecione seu Signo Zodiacal:</h3>
                     <div class='options zodiac-grid'>
-                        <button class='zodiac-btn' onclick='nextStep(3)'>Aries</button>
-                        <button class='zodiac-btn' onclick='nextStep(3)'>Taurus</button>
-                        <button class='zodiac-btn' onclick='nextStep(3)'>Gemini</button>
-                        <button class='zodiac-btn' onclick='nextStep(3)'>Cancer</button>
-                        <button class='zodiac-btn' onclick='nextStep(3)'>Leo</button>
-                        <button class='zodiac-btn' onclick='nextStep(3)'>Virgo</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Áries</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Touro</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Gêmeos</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Câncer</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Leão</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Virgem</button>
                         <button class='zodiac-btn' onclick='nextStep(3)'>Libra</button>
-                        <button class='zodiac-btn' onclick='nextStep(3)'>Scorpio</button>
-                        <button class='zodiac-btn' onclick='nextStep(3)'>Sagittarius</button>
-                        <button class='zodiac-btn' onclick='nextStep(3)'>Capricorn</button>
-                        <button class='zodiac-btn' onclick='nextStep(3)'>Aquarius</button>
-                        <button class='zodiac-btn' onclick='nextStep(3)'>Pisces</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Escorpião</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Sagitário</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Capricórnio</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Aquário</button>
+                        <button class='zodiac-btn' onclick='nextStep(3)'>Peixes</button>
                     </div>
                 </div>
-                <!-- Year Question -->
+                <!-- Pergunta do Ano -->
                 <div class='quiz-step' data-step='3'>
-                    <h3>What is your birth year?</h3>
+                    <h3>Qual é o seu ano de nascimento?</h3>
                     <div class='options'>
                         <select id='birth-year' class='option-btn'>
-                            <option value='' disabled selected>Select Year...</option>
+                            <option value='' disabled selected>Selecione o Ano...</option>
                         </select>
                         <button class='option-btn premium-btn'
-                            onclick='if(document.getElementById("birth-year").value) nextStep(4)'>CONTINUE
+                            onclick='if(document.getElementById("birth-year").value) nextStep(4)'>CONTINUAR
                             &rarr;</button>
                     </div>
                 </div>
-                <!-- Question 4 (Renumbered) -->
+                <!-- Pergunta 4 -->
                 <div class='quiz-step' data-step='4'>
-                    <h3>How aligned do you feel with your divine purpose?</h3>
+                    <h3>O quanto você se sente alinhado com seu propósito divino?</h3>
                     <div class='options'>
-                        <button class='option-btn' onclick='nextStep("optin")'>Fully Aligned</button>
-                        <button class='option-btn' onclick='nextStep("optin")'>Somewhat Disconnected</button>
-                        <button class='option-btn' onclick='nextStep("optin")'>Seeking Urgent Guidance</button>
+                        <button class='option-btn' onclick='nextStep("optin")'>Totalmente Alinhado</button>
+                        <button class='option-btn' onclick='nextStep("optin")'>Um Pouco Desconectado</button>
+                        <button class='option-btn' onclick='nextStep("optin")'>Buscando Orientação Urgente</button>
                     </div>
                 </div>
-                <!-- Opt-in Step -->
+                <!-- Passo do E-mail -->
                 <div class='quiz-step' data-step='optin'>
-                    <h3>Unlock your Personalized Manifestation Blueprint.</h3>
+                    <h3>Desbloqueie seu Mapa de Manifestação Personalizado.</h3>
                     <div class='options'>
-                        <input type='email' id='user-email' placeholder='Enter your primary email...' required>
+                        <input type='email' id='user-email' placeholder='Digite seu melhor e-mail...' required>
                         <div class="trust-badge">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
                                 <path
                                     d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
                             </svg>
-                            Your data is encrypted & 100% private
+                            Seus dados estão criptografados e 100% seguros
                         </div>
-                        <p class='consent-text'>By proceeding, you agree to our Terms and Private Data Policy.</p>
-                        <button class='option-btn premium-btn' onclick='submitEmail()'>UNLOCK MY BLUEPRINT
+                        <p class='consent-text'>Ao prosseguir, você concorda com nossos Termos e Política de Dados.</p>
+                        <button class='option-btn premium-btn' onclick='submitEmail()'>VER MEU MAPA AGORA
                             &rarr;</button>
                     </div>
                 </div>
-                <!-- Final Step -->
+                <!-- Passo Final -->
                 <div class='quiz-step' id='loading-step'>
-                    <h3>Syncing with your cosmic frequency...</h3>
+                    <h3>Sincronizando com sua frequência cósmica...</h3>
                     <div class='loader'></div>
                 </div>
             </div>
         </div>
         <footer>
-            <p>&copy; 2024 Cosmic Insights. <a href='privacy.html'>Privacy Policy</a> | <a href='terms.html'>Terms of
-                    Service</a></p>
-            <p class='affiliate-disclosure'>This site is for educational purposes. We may earn a commission on
-                recommended tools.</p>
+            <p>&copy; 2026 Cosmic Insights. <a href='privacy.html'>Política de Privacidade</a> | <a href='terms.html'>Termos de Uso</a></p>
+            <p class='affiliate-disclosure'>Este site é para fins educacionais. Podemos ganhar uma comissão em ferramentas recomendadas.</p>
         </footer>
     </div>
     <script src='script.js'></script>
